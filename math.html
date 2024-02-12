@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            padding-top: 100px;
+        
+            background-color: aqua;
+        }
+        .design{
+          font-size: 20px;
+        }
+        input{
+            padding: 10px;
+        }
+        button{
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="design">
+        <h1>Guess the Number (1-10)</h1>
+        <input  id="input"> 
+        <button onclick="check()">Check</button>
+        <h2 id="result">Your result</h2>
+        <h2 id="score">Your Score: </h2>
+
+    </div>
+    
+    <script>
+        var input=document.getElementById("input");
+        var result=document.getElementById("result");
+        var score=document.getElementById("score");
+        var a= Math.random();
+        var b=Math.floor(a*10)+1;
+        console.log(b);
+        var c=10;
+        function check()
+        { 
+            var d=input.value;
+           if(b==d) 
+           {
+                result.textContent="You are Correct"
+                alert("You Won");
+                score.textContent="your score :"+c
+           }
+           else
+           {
+              c=c-1;
+              result.textContent="You are wrong"
+              score.textContent="your score :"+c
+           }
+        }
+    </script>
+</body>
+</html>
